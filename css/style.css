@@ -1,0 +1,726 @@
+
+
+
+/*Header*/
+.site-header{
+
+    background-color: #333333;
+    padding: 1rem 0 3rem 0;
+
+}
+
+.site-header.inicio{
+background:url(../img/header.jpg);
+height: 100vh; /*viewport height*/
+min-height: 60rem;
+background-position: center center;
+background-size: cover;
+}
+
+.contenido-header{
+
+    display:flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;   
+
+}
+
+@media (min-width: 768px) {
+
+    .contenido-header{
+
+        text-align: left;
+
+    }
+    
+}
+
+.contenido-header h1{
+
+color:#ffffff;
+padding-bottom: 2rem;
+max-width: 60rem;
+line-height: 2;
+
+}
+
+
+    
+    
+
+/*Globales*/
+
+
+html{
+
+    font-size: 62.5%;/** Reset par REMS - 62.5%=10PX DE 16PX**/
+    box-sizing: border-box; /*snippet de programador de google(para que se mantengan los pixeles que pongas sin que el padding los afecte)*/
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+body{
+
+    font-family: 'Lato', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+img{ /*siempre*/
+
+    max-width:100% ;
+
+}
+
+
+.contenedor{
+    max-width:120rem;/*=1200px*/
+    margin:0 auto 0 auto;
+    width:95%;
+}
+
+.barra{
+
+    
+    padding-top: 3rem;
+}
+
+@media (min-width: 768px) {
+    .barra{
+
+        display: flex; /**Los flex solo afectan a los hijos de la clase*/
+        justify-content: space-between;
+        
+    }
+}
+/*navegacion*/
+.navegacion a {
+
+color:white;
+text-decoration: none;
+font-size: 2.3rem;/**=18PX**/
+display:block;
+
+}
+
+@media (min-width: 768px) {
+
+    .navegacion a {
+
+        display:inline;
+        margin-right: 2rem;
+    }
+
+    .navegacion a:last-of-type{
+        margin:0;
+        
+        }
+    
+}
+.navegacion a:hover{ /*pesudoselectores*/
+
+    color:#71B100;
+}
+
+/**Mobile Menu*/
+
+
+.mobile-menu img{
+    width: 5rem;
+    
+}
+
+@media (min-width: 768px) {
+    
+    .mobile-menu{
+        display:none
+    }
+}
+
+.navegacion:target{
+
+    display: block;
+}
+
+.navegacion{
+    display: none;
+}
+
+
+@media (min-width: 768px) {
+
+    .navegacion{
+        display: block;
+    }
+    
+}
+
+
+h1{
+    font-size: 3.8rem;
+
+}
+
+h2{
+font-size: 3.4rem;
+
+}
+
+h3{
+font-size: 3rem;
+
+}
+
+h4{
+    font-size: 2.6rem;
+
+}
+
+/*Iconos nosotros*/
+
+.icono{
+
+    
+    
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+.icono{
+
+    flex-basis: calc(33.3%-1rem);
+
+}
+   
+}
+
+@media (min-width: 768px) {
+
+    .iconos-nosotros{
+
+        display: flex;
+        justify-content:space-between;
+    
+    }
+}
+
+
+/*.encabezado-nosotros{
+  
+    font-weight: 300;
+    text-align: center;
+}*/
+
+/* o tambien se puede como utilidades :*/
+
+.f-weight{
+font-weight:300;
+
+}
+
+.t-align{
+text-align:center;
+}
+
+.d-block{
+
+    display: block !important; /*El important aunque ya se haya aplicado  en .boton un display inline block no le importa y pone block */
+}
+
+
+
+
+.icono h3{
+
+    text-transform: uppercase;
+
+}
+
+/*Utilidades*/
+.seccion{
+
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+}
+
+/*Anuncios*/
+@media (min-width:768px ) {
+    .contenedor-anuncios{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        
+        }
+}
+
+
+.anuncio{
+   
+text-align: center;
+/*Tambien se puede asi 
+flex: 0 del flex-grow 0 del srhink calc(33.3% - 1rem);*/
+    
+    
+    border-style: solid;
+    border-color: #B5B5B5;
+    border-width: 1px;
+    background-color: #F5F5F5;
+    margin-bottom: 2rem;
+    
+}
+
+@media (min-width: 768px) {
+.anuncio{
+
+    flex-grow: 0;
+    flex-shrink: 0; /*el 1 es default osea que si se hace pequeño y el 0 es para que no se haga y agarre el tamaño de la base*/
+    flex-basis: calc(33.3% - 1rem);
+}
+    
+}
+.contenido-anuncio{
+
+    padding:2rem;
+}
+.contenido-anuncio h3{ /*quitando el margin que fue aplicado anteriormente*/
+
+    margin: 0;
+}
+
+.contenido-anuncio p{
+
+margin:0;
+}
+
+/*tambien se puede así simplificarlo
+
+.contenido-anuncio h3,.contenido-anuncio p{
+
+margin: 0;
+}
+*/
+
+.precio{
+
+    color:#71B100;
+    font-weight: 700;
+}
+
+/*Botones*/
+
+.boton{
+    /*los en enlaces a href tienen un display inline que no permiten cambiar ancho entonces cambias a block*/
+    color:white;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.8rem;
+    margin-top: 1rem;
+    padding:1rem 3rem;
+    display:inline-block;
+    text-align: center;
+    border:none;
+    display:block;
+    flex:0 0 100%;
+    }
+
+
+
+
+    @media (min-width: 768px) {
+
+        .boton{
+
+            display: inline-block;
+            flex:0 0 auto;
+
+        }
+
+        
+    }
+    
+    .boton:hover{  /*Modifica el puntero del boton*/
+cursor: pointer;
+
+    }
+    .boton-amarillo{
+    
+    background-color: #E08709;
+    }
+    
+    .boton-verde{
+    
+    background-color: #71B100;
+    }
+
+    .ver-todas{
+
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    /*contacto home*/
+
+    .imagen-contacto{
+
+        background-image: url(../img/encuentra.jpg);
+        height:40rem; 
+        background-position: center center;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        color:white;
+    }
+
+    .contenido-contacto{
+
+        flex:0 0 95%;  /* del expacio existente cuenta cuanto hay y cuantos elementos y acada elemento el da el mismo*/
+
+    }
+
+    .contenido-contacto p{
+
+        font-size: 1.8rem;
+    }
+
+    .iconos-caracteristicas{
+
+        list-style: none;
+      padding:0;
+      display: flex;
+      justify-content: space-evenly;
+
+    }
+
+    .iconos-caracteristicas li{
+
+      /*  flex:1;*/
+        display: flex;
+
+    }
+
+    .iconos-caracteristicas li img{
+
+        margin-right:2rem; 
+    }
+
+    /*Seccion inferior*/
+
+    @media (min-width: 768px) {
+        
+        .seccion-inferior{
+
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .seccion-inferior .blog{
+
+            flex-basis:60%;
+    
+        }
+
+        .seccion-inferior .testimoniales{
+
+            flex-basis: calc(40% - 2rem);
+        }
+
+       
+    
+    }
+    
+
+    
+    .entrada-blog{
+
+       
+        margin-bottom: 2rem;
+
+    }
+
+    @media (min-width: 768px) {
+
+        .entrada-blog{
+
+            display:flex;
+            justify-content: space-between;
+        }
+        
+    }
+    
+
+    
+    .entrada-blog:last-of-type{ /* asi seleccionas el ultimo tipo entrada-blog*/
+
+        margin-bottom: 0;
+    }
+
+    @media (min-width: 768px) {
+
+        .entrada-blog .imagen{
+
+            flex-basis: 40%;
+    
+        }
+
+        .entrada-blog .texto-entrada{
+
+            flex-basis: calc(60% - 3rem);
+    
+        }
+    
+        
+    }
+
+   
+    
+    .texto-entrada h4{
+
+       margin:0;
+        line-height: 1.4;
+    }
+
+    .texto-entrada em{
+        color:red;
+
+    }
+
+    .texto-entrada a{
+
+        color:black;
+        text-decoration: none;
+    }
+
+    .texto-entrada h4::after{ /*pseudoelemento "no existe en la pagina se muestra pero no se puede seleccionar"*/
+
+        /*documentacion pro en : https://developer.mozilla.org/es/search?q=pseudoelementos&topic=api&topic=apps&topic=css&topic=canvas&topic=webdev&topic=html&topic=http&topic=js&topic=mobile&topic=svg&topic=standards&topic=webext&topic=webgl*/
+        content:'';
+        display: block;
+        width: 15rem;
+        height: .5rem;
+        background-color: #71B100;
+    }
+/*testimoniales*/
+    .testimonial{
+
+background-color: #71B100;
+font-size: 2.4rem;
+padding:2rem;
+color:white;
+border-radius: 2rem;
+
+    }
+
+    .testimonial p{
+
+        text-align: right;
+    }
+
+
+
+    .testimonial blockquote::before{ /*hijo*/
+
+        content: '';
+        background-image: url(../img/comilla.svg);
+        width: 4rem;
+        height: 4rem;
+
+        position:absolute;
+        left:-2rem;
+
+    }
+
+    .testimonial blockquote{
+
+        position: relative; /*padre siempre en relative*/
+        padding-left: 5rem;
+        font-weight: 300;
+    }
+
+    /*foooter*/
+
+    .site-footer{
+
+        background-color: #333333;
+        margin:0;
+      
+    }
+
+    .copyright{
+
+        margin:0;
+        color:white;
+    }
+
+    .contenedor-footer{
+        padding: 3rem 0;
+        text-align: center;
+        
+      
+    }
+
+    @media (min-width: 768px) {
+
+.contenedor-footer{
+
+    display: flex;
+        justify-content: space-between;
+}
+        
+    }
+
+
+    /*CODIGO PAGINAS INTERNAS*/
+
+    .contenido-nosotros{
+
+        
+
+      
+    }
+    
+    @media (min-width: 768) {
+
+       .contenido-nosotros{
+
+        display: grid; /*otra opcion en lugar de flexbox*/
+
+        grid-template-columns: 50% 50%;
+        grid-column-gap: 2rem;
+       } 
+    }
+
+
+
+    .texto-nosotros blockquote{
+
+        font-weight: 900;
+        font-size: 2rem;
+        margin:0;
+        padding: 1rem 0 3rem 0;
+
+    }
+
+    /*anuncios*/
+    /*.site-header.inicio.anuncio{
+        background:url(../img/anuncio1.jpg);
+        height: 60vh; 
+        min-height: 60rem;
+        background-position: center center;
+        background-size:cover;
+        }
+
+        .t-anuncio{
+
+            padding-bottom: 0;
+        }
+  
+        .centrado{
+
+            align-content: center;
+        } */
+
+        .contenido-centrado {
+            max-width: 800px;
+        }
+
+.resumen-propiedad{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+        /**Contacto*/
+
+        
+
+        legend{
+
+            font-size: 2.4rem;
+            color: #333333;
+        }
+
+label{
+    display: block; /*el input toma todo el espacio disponible y ya nose enciman*/
+font-weight: 700;
+text-transform: uppercase;
+}
+
+form p{
+
+    font-size: 1.2rem;
+    color:#4f4f4f;
+    
+
+}
+
+
+
+.forma-contacto{
+
+    max-width: 60rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*input[type="text"],input[type="email"]*/ /*Aplicando selector de atributos*/
+/*{
+    padding: 1rem;
+    display: block;
+    width: 100%;
+    background-color: #e1e1e1;
+    margin-bottom: 2rem;
+    border:none;
+    border-radius: 1rem;
+    
+}*/
+
+input:not([type="submit"]),textarea,select
+{
+    padding: 1rem;
+    display: block;
+    width: 100%;
+    background-color: #e1e1e1;
+    margin-bottom: 2rem;
+    border:none;
+    border-radius: 1rem;
+
+}
+
+input[type="radio"]{
+
+    width: auto;
+    margin: 0;
+}
+
+.forma-contacto{
+
+    max-width: 60rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+select{
+
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+textarea{
+
+    height: 20rem;
+}
+
+
+
+
+
+ 
+   
+    
